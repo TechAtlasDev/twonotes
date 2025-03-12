@@ -11,12 +11,13 @@ export default function Body() {
       const user = JSON.parse(storedUser);
       setUserName(user.displayName || "Tu espacio");
     }
+    console.log(storedUser)
   }, []);
 
   return (
     <Section className="w-full h-full px-5 py-10">
       <h1 className="text-2xl lg:text-3xl font-bold lg:mx-10">
-        {userName ? `${userName}` : "Tu espacio"}
+        Bienvenido {userName ? `${userName}` : "Tu espacio"}
       </h1>
       <div className="my-10 lg:mx-20 flex flex-col gap-5">
         <Data title="Tus tareas" description="Aquí podrás ver todas tus tareas pendientes" />

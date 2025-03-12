@@ -1,7 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/Home";
-import Login from "./pages/Login"
+import Login from "./pages/Login";
 import DashboardView from "./pages/dashboard";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -14,8 +15,12 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <DashboardView />,
-  }
+    element: (
+      <ProtectedRoute>
+        <DashboardView />
+      </ProtectedRoute>
+    ),
+  },
 ]);
 
 function App() {
@@ -26,7 +31,7 @@ function App() {
         Creado por <a href="https://github.com/techatlasdev/">TechAtlasDev</a>
       </footer>
     </main>
-  )
+  );
 }
 
 export default App;
