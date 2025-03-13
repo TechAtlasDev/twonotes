@@ -26,6 +26,7 @@ const GoogleButton = () => {
 
   return (
     <button onClick={signInWithGoogle} className="btn btn-outline">
+      <i class="bi bi-google"></i>
       Iniciar sesión con Google
     </button>
   );

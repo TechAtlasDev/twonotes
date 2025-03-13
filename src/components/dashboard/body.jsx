@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Section from "../section";
 import Data from "./data_container";
 
+import NewUser from "./new_user";
+
 export default function Body() {
   const [userName, setUserName] = useState("");
 
@@ -15,13 +17,10 @@ export default function Body() {
   }, []);
 
   return (
-    <Section className="w-full h-full px-5 py-10">
-      <h1 className="text-2xl lg:text-3xl font-bold lg:mx-10">
-        Bienvenido {userName ? `${userName}` : "Tu espacio"}
-      </h1>
-      <div className="my-10 lg:mx-20 flex flex-col gap-5">
-        <Data title="Tus tareas" description="Aquí podrás ver todas tus tareas pendientes" />
-      </div>
+    <Section className="w-full h-full px-5 py-32">
+      {
+        userName ? <NewUser /> : <NewUser />
+      }
     </Section>
   );
 }

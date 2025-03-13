@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import DashboardView from "./pages/dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
+import Tareas from "./pages/dashboard/Tareas";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,14 @@ const router = createBrowserRouter([
       </ProtectedRoute>
     ),
   },
+  {
+    path: "/dashboard/tareas",
+    element: (
+      <ProtectedRoute>
+        <Tareas />
+      </ProtectedRoute>
+    ),
+  }
 ]);
 
 function App() {
