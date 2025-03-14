@@ -7,10 +7,7 @@ export default function DashboardView() {
   return (
     <Section className="w-screen h-screen flex flex-col overflow-x-hidden">
       <Navbar />
-      <div className="flex flex-row">
-        <Sidebar />
-        <Body />
-      </div>
+      <Body />
     </Section>
   )
 }

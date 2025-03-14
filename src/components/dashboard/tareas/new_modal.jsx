@@ -52,6 +52,7 @@ export default function NewTareaModal({ closeModal }) {
       console.error(error);
     } finally {
       setLoading(false);
+      closeModal();
     }
   };
   
@@ -63,8 +64,7 @@ export default function NewTareaModal({ closeModal }) {
       {error && <p className="text-red-500">{error}</p>}
       {success && <p className="text-green-500">{success}</p>}
 
-      <div className="flex flex-col gap-2 bg-base-200 p-4 rounded-lg">
-        {/* Descripción */}
+      <div className="flex flex-col gap-2 bg-base-200 p-4 rounded-lg w-full">
         <label className="font-bold">Descripción</label>
         <input
           type="text"
